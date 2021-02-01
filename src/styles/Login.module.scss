@@ -1,0 +1,105 @@
+@import "./themes.scss";
+
+.loginContainer {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  background-color: #fff;
+
+  .formContainer {
+    padding-left: 12vw;
+    width: 54vw;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    background-color: $primaryColor;
+
+    .formHeader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .loginLabel {
+        color: white;
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .appName {
+        font-size: 56px;
+        color: white;
+      }
+    }
+
+    .loginInput {
+      margin-bottom: 16px;
+      width: 60%;
+      background-color: $primaryColor;
+      color: white;
+      padding: 16px 24px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      &::placeholder {
+        color: white;
+      }
+    }
+
+    .loginButton {
+      background-color: white;
+      border: none;
+      outline: none;
+      width: 20%;
+      padding: 16px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      &:hover {
+        background-color: $darkColor;
+        color: white;
+      }
+    }
+  }
+
+  .background {
+    flex: 1;
+    background-color: $primaryColor;
+    .lineWhite {
+      height: 100%;
+      width: 100%;
+      background-color: $disabledColor;
+      clip-path: polygon(50% 0, 51% 0, 100% 98%, 100% 100%);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    .lineGreen {
+      height: 100%;
+      width: 100%;
+      background-color: $primaryColor;
+      clip-path: polygon(51% 0, 53% 0, 100% 94%, 100% 98%);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    .polygonLowLeft {
+      height: 100%;
+      width: 100%;
+      background-color: $disabledColor;
+      clip-path: polygon(100% 0, 75% 100%, 100% 100%);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    .polygonMiddleLeft {
+      height: 100%;
+      width: 100%;
+      background-color: $successColor;
+      clip-path: polygon(100% 0, 51% 0, 100% 100%);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}

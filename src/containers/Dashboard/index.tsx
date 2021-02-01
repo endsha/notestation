@@ -1,18 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "@styles/Dashboard.module.scss";
+import showdown from "showdown";
 
-const Dashboard = () => {
-  const [value, setValue] = useState("");
+const dashboardLifeCycle = (props: any) => {
+  const [rawValue, setRawValue] = useState("");
+  const [compiledValue, setCompiledValue] = useState("");
+  const converter = new showdown.Converter({ simpleLineBreaks: true });
+
+  useEffect(() => {
+    const html = converter.makeHtml(rawValue);
+    setCompiledValue(html);
+  }, [rawValue]);
+
+  return {
+    compiledValue,
+    setRawValue,
+  };
+};
+
+const Dashboard = (props: any) => {
+  const { compiledValue, setRawValue } = dashboardLifeCycle(props);
   return (
     <div className={styles.container}>
       <textarea
         className={styles.editorDefault}
         onChange={(event) => {
-          console.log(event.target.value);
-          setValue(event.target.value);
+          setRawValue(event.target.value);
         }}
       />
-      <div className={styles.markdownDefault}>{value}</div>
+      <div
+        className={styles.markdownDefault}
+        dangerouslySetInnerHTML={{ __html: compiledValue }}
+      />
     </div>
   );
 };
