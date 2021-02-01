@@ -1,0 +1,17 @@
+{
+  "auto_format_on_save": true,
+  "auto_format_on_save_excludes": [
+    "*/node_modules/*",
+    "*/file.js",
+    "*.json",
+    "*.md"
+  ],
+  "prettier_options": {
+    "semi": true,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "jsxBracketSameLine": true,
+    "printWidth": 90
+  }
+}
