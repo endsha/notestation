@@ -1,0 +1,17 @@
+@import "/src/styles/themes.scss";
+
+.navbarDefault {
+  background-color: $primaryColor;
+  display: flex;
+  padding: 16px 24px;
+  h1 {
+    margin: 0;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .navbarOptionsContainer {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+  }
+}

@@ -1,6 +1,11 @@
-import Dashboard from "@containers/Dashboard";
-import styles from "../styles/Hello.module.scss";
+import Directory from "@containers/Directory";
+import { Navbar } from "@components";
 
-export default function Home() {
-  return <Dashboard />;
+export default function DirectoryPage() {
+  return (
+    <>
+      <Navbar />
+      <Directory />
+    </>
+  );
 }

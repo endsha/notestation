@@ -5,6 +5,10 @@
       "@styles/*": ["styles/*"],
       "@components": ["common/components"],
       "@containers/*": ["containers/*"],
+      "#types/*": ["types/*"],
+      "@redux/*": ["redux/*"],
+      "@utils/*": ["utils/*"],
+      "@hooks/*": ["common/hooks/*"]
     },
     "target": "es5",
     "lib": [

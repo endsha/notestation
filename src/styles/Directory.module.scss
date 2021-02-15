@@ -1,0 +1,36 @@
+.directoryContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 32px;
+
+  .noteCard {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    margin: 8px 0;
+    padding: 16px 16px;
+    border-radius: 6px;
+    .noteName {
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .newNote {
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  .createNewNoteModal {
+    display: flex;
+    flex-direction: column;
+
+    .noteNameInput {
+      margin: 8px 0;
+    }
+  }
+}

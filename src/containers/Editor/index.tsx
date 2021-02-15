@@ -1,11 +1,23 @@
 import { useState, useEffect } from "react";
-import styles from "@styles/Dashboard.module.scss";
+import { useSelector, useDispatch } from "react-redux";
+import { useRouter } from "next/router";
+import { RootStoreType } from "#types/stores";
+import { writeNote } from "@redux/note/noteSlice";
+import styles from "@styles/Editor.module.scss";
 import showdown from "showdown";
 
-const dashboardLifeCycle = (props: any) => {
+const userSelector = (state: RootStoreType) => state.user;
+
+const editorLifeCycle = (props: any) => {
   const [rawValue, setRawValue] = useState("");
   const [compiledValue, setCompiledValue] = useState("");
   const converter = new showdown.Converter({ simpleLineBreaks: true });
+
+  const dispatch = useDispatch();
+
+  const storeNote = () => {
+    dispatch(writeNote(rawValue));
+  };
 
   useEffect(() => {
     const html = converter.makeHtml(rawValue);
@@ -15,11 +27,12 @@ const dashboardLifeCycle = (props: any) => {
   return {
     compiledValue,
     setRawValue,
+    storeNote,
   };
 };
 
-const Dashboard = (props: any) => {
-  const { compiledValue, setRawValue } = dashboardLifeCycle(props);
+const Editor = (props: any) => {
+  const { compiledValue, setRawValue, storeNote } = editorLifeCycle(props);
   return (
     <div className={styles.container}>
       <textarea
@@ -36,4 +49,4 @@ const Dashboard = (props: any) => {
   );
 };
 
-export default Dashboard;
+export default Editor;
