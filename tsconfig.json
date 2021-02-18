@@ -8,7 +8,8 @@
       "#types/*": ["types/*"],
       "@redux/*": ["redux/*"],
       "@utils/*": ["utils/*"],
-      "@hooks/*": ["common/hooks/*"]
+      "@hooks/*": ["common/hooks/*"],
+      "@hooks": ["common/hooks"]
     },
     "target": "es5",
     "lib": [

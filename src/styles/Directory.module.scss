@@ -10,10 +10,18 @@
     margin: 8px 0;
     padding: 16px 16px;
     border-radius: 6px;
+    justify-content: space-between;
     .noteName {
       &:hover {
         cursor: pointer;
         text-decoration: underline;
+      }
+    }
+    .noteDelete {
+      color: rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      &:hover {
+        color: #000000;
       }
     }
   }

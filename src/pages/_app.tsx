@@ -6,7 +6,13 @@ import { loginWithGoogle } from "@redux/user/userSlice";
 import localStore from "@utils/localStore";
 import store from "@redux/store";
 import firebase from "@utils/firebase";
+import firebaseConfig from "../../firebase.config.json";
 import "../styles/globals.scss";
+
+if (typeof window !== "undefined" && firebase.apps.length === 0) {
+  console.log("INITIALIZE_APP");
+  firebase.initializeApp(firebaseConfig);
+}
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }: AppProps) {
